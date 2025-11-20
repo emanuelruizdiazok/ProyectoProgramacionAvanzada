@@ -1,7 +1,6 @@
 package ar.edu.unlam.pb2.criaturas;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class CriaturaTest {
@@ -10,7 +9,7 @@ public class CriaturaTest {
     public void queSePuedaEntrenarUnaCriaturaSalvajeSinExcederEnergia() {
         CriaturaSalvaje criatura = new CriaturaSalvaje("Fiera", 150, Afinidad.FUEGO);
         criatura.entrenar();
-        assertEquals(180, criatura.getEnergia());
+        assertEquals(Integer.valueOf(180), criatura.getEnergia());
     }
 
     @Test(expected = EnergiaExcedidaException.class)
@@ -25,14 +24,14 @@ public class CriaturaTest {
         criatura.setInestable(true);
         criatura.pacificar();
         assertFalse(criatura.esInestable());
-        assertEquals(80, criatura.getEnergia());
+        assertEquals(Integer.valueOf(80), criatura.getEnergia());
     }
-    
+
     @Test
     public void queSePuedaEntrenarUnaCriaturaDomesticada() {
         CriaturaDomesticada criatura = new CriaturaDomesticada("Domestika", 100, Afinidad.AGUA);
         criatura.entrenar();
-        assertEquals(120, criatura.getEnergia());
+        assertEquals(Integer.valueOf(120), criatura.getEnergia());
     }
 
     @Test
@@ -47,7 +46,7 @@ public class CriaturaTest {
     public void queSePuedaEntrenarUnaCriaturaAncestral() {
         CriaturaAncestral criatura = new CriaturaAncestral("Sabio", 50, Afinidad.TIERRA);
         criatura.entrenar();
-        assertEquals(100, criatura.getEnergia());
+        assertEquals(Integer.valueOf(100), criatura.getEnergia());
     }
 
     @Test
@@ -56,8 +55,6 @@ public class CriaturaTest {
         criatura.setInestable(true);
         criatura.pacificar();
         assertFalse(criatura.esInestable());
-        assertEquals(110, criatura.getEnergia());
+        assertEquals(Integer.valueOf(110), criatura.getEnergia());
     }
-
-    
 }

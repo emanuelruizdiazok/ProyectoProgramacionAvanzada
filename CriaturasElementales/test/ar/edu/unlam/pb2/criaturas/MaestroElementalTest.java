@@ -19,7 +19,7 @@ public class MaestroElementalTest {
         Criatura criatura = new CriaturaDomesticada("Fenix", 100, Afinidad.FUEGO);
         maestro.agregarCriatura(criatura);
         maestro.entrenar("Fenix");
-        assertEquals(120, maestro.getCriatura("Fenix").getEnergia());
+        assertEquals(Integer.valueOf(120), maestro.getCriatura("Fenix").getEnergia());
     }
 
     @Test(expected = FaltaDeMaestriaException.class)

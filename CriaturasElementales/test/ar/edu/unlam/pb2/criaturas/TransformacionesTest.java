@@ -10,7 +10,7 @@ public class TransformacionesTest {
         Criatura base = new CriaturaDomesticada("Fuego", 50, Afinidad.FUEGO);
         Criatura decorada = new LlamaInterna(base);
         decorada.entrenar();
-        assertEquals(60, base.getEnergia());
+        assertEquals(Integer.valueOf(60), base.getEnergia());
     }
 
     @Test
@@ -18,7 +18,7 @@ public class TransformacionesTest {
         Criatura base = new CriaturaDomesticada("Agua", 30, Afinidad.AGUA);
         Criatura decorada = new BendicionDelRio(base);
         decorada.entrenar();
-        assertEquals(35, base.getEnergia());
+        assertEquals(Integer.valueOf(35), base.getEnergia());
     }
 
     @Test
@@ -26,7 +26,7 @@ public class TransformacionesTest {
         Criatura base = new CriaturaDomesticada("Viento", 20, Afinidad.AIRE);
         Criatura decorada = new AscensoDelViento(base);
         decorada.entrenar();
-        assertEquals(35, base.getEnergia());
+        assertEquals(Integer.valueOf(35), base.getEnergia());
     }
 
     @Test
@@ -34,7 +34,7 @@ public class TransformacionesTest {
         Criatura base = new CriaturaDomesticada("Tierra", 40, Afinidad.TIERRA);
         Criatura decorada = new VinculoTerrestre(base);
         decorada.entrenar();
-        assertEquals(47, base.getEnergia());
+        assertEquals(Integer.valueOf(47), base.getEnergia());
     }
 
     @Test
