@@ -27,6 +27,37 @@ public class CriaturaTest {
         assertFalse(criatura.esInestable());
         assertEquals(80, criatura.getEnergia());
     }
+    
+    @Test
+    public void queSePuedaEntrenarUnaCriaturaDomesticada() {
+        CriaturaDomesticada criatura = new CriaturaDomesticada("Domestika", 100, Afinidad.AGUA);
+        criatura.entrenar();
+        assertEquals(120, criatura.getEnergia());
+    }
+
+    @Test
+    public void queCriaturaDomesticadaSePacifique() {
+        CriaturaDomesticada criatura = new CriaturaDomesticada("Domestika", 100, Afinidad.AGUA);
+        criatura.setInestable(true);
+        criatura.pacificar();
+        assertFalse(criatura.esInestable());
+    }
+
+    @Test
+    public void queSePuedaEntrenarUnaCriaturaAncestral() {
+        CriaturaAncestral criatura = new CriaturaAncestral("Sabio", 50, Afinidad.TIERRA);
+        criatura.entrenar();
+        assertEquals(100, criatura.getEnergia());
+    }
+
+    @Test
+    public void queCriaturaAncestralSePacifiqueYSumeEnergia() {
+        CriaturaAncestral criatura = new CriaturaAncestral("Sabio", 100, Afinidad.TIERRA);
+        criatura.setInestable(true);
+        criatura.pacificar();
+        assertFalse(criatura.esInestable());
+        assertEquals(110, criatura.getEnergia());
+    }
 
     
 }
