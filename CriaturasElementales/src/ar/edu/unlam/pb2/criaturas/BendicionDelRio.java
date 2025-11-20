@@ -8,7 +8,12 @@ public class BendicionDelRio extends Transformacion {
 
     @Override
     public void entrenar() {
-        original.modificarEnergia(5);
+        Integer energiaActual = original.getEnergia();
+        Integer energiaDuplicada = energiaActual * 2;
+        if (energiaDuplicada > 180) {
+            energiaDuplicada = 180;
+        }
+        original.modificarEnergia(energiaDuplicada - energiaActual);
     }
 
     @Override

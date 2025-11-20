@@ -45,4 +45,52 @@ public class TransformacionesTest {
         decorada.pacificar();
         assertFalse(base.esInestable());
     }
+    
+    
+    @Test
+    public void queBendicionDelRioDupliqueEnergiaSinSuperar180() {
+        Criatura base = new CriaturaDomesticada("Acuatica", 100, Afinidad.AGUA);
+        Criatura decorada = new BendicionDelRio(base);
+        decorada.entrenar();
+        assertEquals(Integer.valueOf(180), base.getEnergia()); 
+    }
+
+
+    @Test
+    public void queLlamaInternaSume30SiAfinidadEsFuego() {
+        Criatura base = new CriaturaDomesticada("Fiera", 100, Afinidad.FUEGO);
+        Criatura decorada = new LlamaInterna(base);
+        decorada.entrenar();
+        assertEquals(Integer.valueOf(130), base.getEnergia());
+    }
+
+    @Test
+    public void queLlamaInternaVuelvaInestableSiNoEsFuego() {
+        Criatura base = new CriaturaDomesticada("NoFuego", 100, Afinidad.AGUA);
+        Criatura decorada = new LlamaInterna(base);
+        decorada.entrenar();
+        assertTrue(base.esInestable());
+    }
+
+
+    @Test
+    public void queVinculoTerrestreNoPermitaEnergiaMenorA50() {
+        Criatura base = new CriaturaDomesticada("Tierra", 40, Afinidad.TIERRA);
+        Criatura decorada = new VinculoTerrestre(base);
+        decorada.entrenar(); // Si no sube, fuerza mínimo 50
+        assertTrue(base.getEnergia() >= 50);
+    }
+
+
+    @Test
+    public void queAscensoDelVientoCambieTemporalmenteAfinidadAAire() {
+        Criatura base = new CriaturaDomesticada("Voladora", 80, Afinidad.FUEGO);
+        Criatura decorada = new AscensoDelViento(base);
+        decorada.entrenar();
+        assertEquals(Afinidad.FUEGO, base.getAfinidad()); // Se restaura
+    }
+    
+    
+    
+    
 }

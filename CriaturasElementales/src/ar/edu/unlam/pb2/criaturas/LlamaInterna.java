@@ -8,7 +8,11 @@ public class LlamaInterna extends Transformacion {
 
     @Override
     public void entrenar() {
-        original.modificarEnergia(10);
+        if (original.getAfinidad() == Afinidad.FUEGO) {
+            original.modificarEnergia(30);
+        } else {
+            original.setInestable(true);
+        }
     }
 
     @Override

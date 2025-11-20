@@ -8,7 +8,10 @@ public class VinculoTerrestre extends Transformacion {
 
     @Override
     public void entrenar() {
-        original.modificarEnergia(7);
+        original.entrenar();
+        if (original.getEnergia() < 50) {
+            original.modificarEnergia(50 - original.getEnergia());
+        }
     }
 
     @Override
