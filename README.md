@@ -1,48 +1,76 @@
-# 🌋 Proyecto de Gestión de Criaturas Elementales
+🌋 Proyecto de Gestión de Criaturas Elementales
+🧠 Descripción
 
-## 🧠 Descripción
-Este proyecto modela un sistema de entrenamiento y gestión de criaturas elementales (Fuego, Agua, Aire, Tierra) en el contexto de un mundo fantástico. Los maestros elementales pueden registrar, entrenar y pacificar diferentes tipos de criaturas utilizando principios de **Programación Orientada a Objetos avanzada**.
+Sistema para registrar, entrenar y controlar criaturas con afinidades elementales: Fuego, Agua, Aire y Tierra.
+Los maestros pueden entrenar y transformar criaturas utilizando principios de Programación Orientada a Objetos.
 
----
+🎯 Objetivos del Trabajo Práctico
 
-## 🎯 Objetivos del Trabajo Práctico
+Usar herencia, clases abstractas e interfaces.
 
-- Aplicar **herencia, interfaces y clases abstractas**
-- Usar **colecciones avanzadas** (`Map`)
-- Manejar **excepciones checked y unchecked**
-- Cubrir funcionalidades con **tests unitarios en JUnit4**
-- Usar **Git y GitHub** para versionado en equipo
+Implementar colecciones como HashMap.
 
----
+Manejar excepciones checked y unchecked.
 
-## ✅ Funcionalidades Implementadas
+Aplicar TDD con JUnit 4.
 
-### 📦 Criaturas con comportamientos diferenciados
+Utilizar Git y GitHub para trabajo colaborativo.
 
-- **Salvaje**: riesgo de energía máxima
-- **Domesticada**: simple y controlada
-- **Ancestral**: poderosa y estable
+✅ Funcionalidades Implementadas
+📦 Criaturas
 
-### 🔁 Transformaciones aplicadas
+Salvajes: Aumentan su energía con riesgo de superarla (lanza excepción).
 
-- Con clases como `LlamaInterna`, `BendicionDelRio`, etc.
+Domesticadas: Aumentan energía de forma estable.
 
-### ❗ Manejo de errores
+Ancestrales: Muy potentes, se estabilizan con entrenamiento.
 
-- `EnergiaExcedidaException` (unchecked)
-- `FaltaDeMaestriaException` (checked)
+🔁 Transformaciones
 
-### 📚 Tests
+LlamaInterna: Suma energía si es de fuego; si no, queda inestable.
 
-- Tests en JUnit para todas las funcionalidades clave:
-  - Entrenamiento
-  - Pacificación
-  - Manejo de errores
-  - Verificación de lógica y estado
+BendicionDelRio: Duplica la energía sin superar 180.
 
----
+VinculoTerrestre: La energía nunca queda bajo 50.
 
-## 👥 Autores
+AscensoDelViento: Convierte temporalmente a tipo Aire.
 
-- Emanuel Ruiz Díaz  
-- Juan Manuel Pena
+🤝 Interacciones entre Criaturas
+
+Afinidades iguales → ambas ganan energía.
+
+Afinidades opuestas → se vuelven inestables.
+
+Si una es ancestral → gana energía y la otra pierde.
+
+📊 Reportes del Consejo
+
+Listar todas las criaturas.
+
+Obtener la criatura con más energía.
+
+Saber qué maestro tiene más criaturas transformadas.
+
+Mapear cuántas criaturas hay por afinidad.
+
+❗ Excepciones
+
+EnergiaExcedidaException: cuando se supera el límite permitido.
+
+FaltaDeMaestriaException: cuando un maestro sin nivel intenta entrenar.
+
+📚 Tests
+
+Entrenamiento y pacificación.
+
+Transformaciones y su comportamiento.
+
+Reportes e interacciones.
+
+Manejo de errores.
+
+👥 Autores
+
+Emanuel Ruiz Díaz
+
+Juan Manuel Pena
