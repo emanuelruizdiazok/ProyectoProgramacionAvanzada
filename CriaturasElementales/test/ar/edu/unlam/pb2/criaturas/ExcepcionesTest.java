@@ -11,7 +11,15 @@ public class ExcepcionesTest {
 	        CriaturaSalvaje salvaje = new CriaturaSalvaje("Bestia", 190, Afinidad.AIRE);
 	        salvaje.entrenar(); 
 	    }
+	   
+	   @Test(expected = FaltaDeMaestriaException.class)
+	    public void queMaestroLanceFaltaDeMaestriaException() throws FaltaDeMaestriaException {
+	        MaestroElemental maestro = new MaestroElemental("Aang", 5, Afinidad.AGUA); 
+	        CriaturaDomesticada criatura = new CriaturaDomesticada("Nami", 100, Afinidad.AGUA);
 
+	        maestro.agregarCriatura(criatura);
+	        maestro.entrenar("Nami"); 
+	    }
 	    
 	}
 
