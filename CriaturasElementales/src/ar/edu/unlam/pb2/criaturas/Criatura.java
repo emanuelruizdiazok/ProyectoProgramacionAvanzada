@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb2.criaturas;
 
-public abstract class Criatura {
+public abstract class Criatura implements Entrenable {
 	protected String nombre;
 	protected int energia;
 	protected Afinidad afinidad;
@@ -13,7 +13,7 @@ public abstract class Criatura {
 		this.inestable = false;
 	}
 
-	public abstract void entrenar(); //SE VA A AGREGAR LA LOGICA DESPUES
+	public abstract void entrenar(); 
 
 	public abstract void pacificar();
 
