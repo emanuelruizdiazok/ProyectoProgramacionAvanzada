@@ -25,7 +25,7 @@ Este proyecto modela un sistema de entrenamiento y gestión de criaturas element
 
 ### 🔁 Transformaciones aplicadas
 
-- Decorator Pattern con clases como `LlamaInterna`, `BendicionDelRio`, etc.
+- Con clases como `LlamaInterna`, `BendicionDelRio`, etc.
 
 ### ❗ Manejo de errores
 
