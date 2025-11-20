@@ -2,7 +2,7 @@ package ar.edu.unlam.pb2.criaturas;
 
 public class CriaturaAncestral extends Criatura {
 
-    public CriaturaAncestral(String nombre, int energia, Afinidad afinidad) {
+    public CriaturaAncestral(String nombre, Integer energia, Afinidad afinidad) {
         super(nombre, energia, afinidad);
     }
 

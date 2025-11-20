@@ -2,11 +2,11 @@ package ar.edu.unlam.pb2.criaturas;
 
 public abstract class Criatura implements Entrenable {
 	protected String nombre;
-	protected int energia;
+	protected Integer energia;
 	protected Afinidad afinidad;
-	protected boolean inestable;
+	protected Boolean inestable;
 
-	public Criatura(String nombre, int energia, Afinidad afinidad) {
+	public Criatura(String nombre, Integer energia, Afinidad afinidad) {
 		this.nombre = nombre;
 		this.energia = energia;
 		this.afinidad = afinidad;
@@ -21,7 +21,7 @@ public abstract class Criatura implements Entrenable {
 		return nombre;
 	}
 
-	public int getEnergia() {
+	public Integer getEnergia() {
 		return energia;
 	}
 
@@ -29,15 +29,15 @@ public abstract class Criatura implements Entrenable {
 		return afinidad;
 	}
 
-	public boolean esInestable() {
+	public Boolean esInestable() {
 		return inestable;
 	}
 
-	public void setInestable(boolean inestable) {
+	public void setInestable(Boolean inestable) {
 		this.inestable = inestable;
 	}
 
-	public void modificarEnergia(int delta) {
+	public void modificarEnergia(Integer delta) {
 		this.energia += delta;
 		if (this.energia < 0)
 			this.energia = 0;
