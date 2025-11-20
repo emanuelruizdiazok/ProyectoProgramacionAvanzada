@@ -1,76 +1,89 @@
-🌋 Proyecto de Gestión de Criaturas Elementales
-🧠 Descripción
+   # 🌋 Proyecto de Gestión de Criaturas Elementales
 
-Sistema para registrar, entrenar y controlar criaturas con afinidades elementales: Fuego, Agua, Aire y Tierra.
-Los maestros pueden entrenar y transformar criaturas utilizando principios de Programación Orientada a Objetos.
+Sistema para registrar, entrenar y controlar criaturas con afinidades elementales (Fuego, Agua, Aire y Tierra).  
+Los maestros pueden entrenar y transformar criaturas aplicando principios de Programación Orientada a Objetos.
 
-🎯 Objetivos del Trabajo Práctico
+---
 
-Usar herencia, clases abstractas e interfaces.
+## 📘 Características Principales
 
-Implementar colecciones como HashMap.
+- Herencia, clases abstractas e interfaces.
+- Uso de colecciones (`HashMap`).
+- Manejo de excepciones *checked* y *unchecked*.
+- Desarrollo guiado por pruebas (TDD con JUnit 4).
+- Trabajo colaborativo con Git y GitHub.
 
-Manejar excepciones checked y unchecked.
+---
 
-Aplicar TDD con JUnit 4.
+## 🐲 Tipos de Criaturas
 
-Utilizar Git y GitHub para trabajo colaborativo.
+### Salvajes
+- Aumentan energía con riesgo de superarla.
+- Pueden lanzar `EnergiaExcedidaException`.
 
-✅ Funcionalidades Implementadas
-📦 Criaturas
+### Domesticadas
+- Aumentan energía de manera estable.
 
-Salvajes: Aumentan su energía con riesgo de superarla (lanza excepción).
+### Ancestrales
+- Muy potentes.
+- Se estabilizan con entrenamiento.
 
-Domesticadas: Aumentan energía de forma estable.
+---
 
-Ancestrales: Muy potentes, se estabilizan con entrenamiento.
+## 🔁 Transformaciones
 
-🔁 Transformaciones
+### Llama Interna 🔥
+- Suma energía si la criatura es de Fuego.
+- Si no, queda inestable.
 
-LlamaInterna: Suma energía si es de fuego; si no, queda inestable.
+### Bendición del Río 💧
+- Duplica energía sin superar 180.
 
-BendicionDelRio: Duplica la energía sin superar 180.
+### Vínculo Terrestre 🪨
+- La energía nunca baja de 50.
 
-VinculoTerrestre: La energía nunca queda bajo 50.
+### Ascenso del Viento 🌬️
+- Convierte temporalmente la afinidad a AIRE.
 
-AscensoDelViento: Convierte temporalmente a tipo Aire.
+---
 
-🤝 Interacciones entre Criaturas
+## 🤝 Interacciones entre Criaturas
 
-Afinidades iguales → ambas ganan energía.
+- Afinidades iguales → ambas ganan energía.
+- Afinidades opuestas → ambas quedan inestables.
+- Si una es ancestral:
+  - La ancestral gana 20 de energía.
+  - La otra pierde 15 (mínimo 0).
 
-Afinidades opuestas → se vuelven inestables.
+---
 
-Si una es ancestral → gana energía y la otra pierde.
+## 📊 Reportes del Consejo
 
-📊 Reportes del Consejo
+- Listar todas las criaturas registradas por todos los maestros.
+- Obtener la criatura con mayor energía.
+- Determinar qué maestro tiene más criaturas transformadas.
+- Obtener un mapa con la cantidad de criaturas por afinidad.
 
-Listar todas las criaturas.
+---
 
-Obtener la criatura con más energía.
+## ❗ Excepciones
 
-Saber qué maestro tiene más criaturas transformadas.
+- `EnergiaExcedidaException`: cuando se supera el límite de energía.
+- `FaltaDeMaestriaException`: cuando un maestro no tiene suficiente nivel.
 
-Mapear cuántas criaturas hay por afinidad.
+---
 
-❗ Excepciones
+## 🧪 Tests Incluidos
 
-EnergiaExcedidaException: cuando se supera el límite permitido.
+- Entrenamiento y pacificación.
+- Transformaciones.
+- Interacciones entre criaturas.
+- Reportes del consejo.
+- Manejo de errores y validación de reglas.
 
-FaltaDeMaestriaException: cuando un maestro sin nivel intenta entrenar.
+---
 
-📚 Tests
+## 👥 Autores
 
-Entrenamiento y pacificación.
-
-Transformaciones y su comportamiento.
-
-Reportes e interacciones.
-
-Manejo de errores.
-
-👥 Autores
-
-Emanuel Ruiz Díaz
-
-Juan Manuel Pena
+- Emanuel Ruiz Díaz  
+- Juan Manuel Pena
